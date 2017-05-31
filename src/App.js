@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ChordEditor from './components/ChordEditor';
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello World!</h1>
+      <div className="wrapper">
+        <Header />
+        <div className="workspace">
+          <ChordEditor />
+        </div>
+        <Footer />
+      </div>
     );
   }
 }
