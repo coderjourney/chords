@@ -20,6 +20,38 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      body, html, #root {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .chord-editor {
+        display: flex;
+        flex-direction: row;
+        min-height: 50vh;
+      }
+      .panel {
+        flex: 1;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+      }
+      .chord-output {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      .chord-output td {
+        padding: 0;
+      }
+      .chord-output table {
+        margin: 10px 0;
+      }
+    </style>
   </head>
   <body>
     <noscript>
