@@ -3,17 +3,28 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ChordEditor from './components/ChordEditor';
+import { base } from './base';
 
 class App extends Component {
   constructor() {
     super();
+    this.addSong = this.addSong.bind(this);
     this.updateSong = this.updateSong.bind(this);
     this.state = {
-      songs: {
-        "1": { id: 1, chordpro: "Lyrics for song 1." },
-        "2": { id: 2, chordpro: "Lyrics for song 2." }
-      }
+      songs: { }
     };
+  }
+
+  addSong(title) {
+    const songs = {...this.state.songs};
+    const id = Date.now();
+    songs[id] = {
+      id: id,
+      title: title,
+      chordpro: ""
+    };
+
+    this.setState({songs});
   }
 
   updateSong(song) {
@@ -21,6 +32,17 @@ class App extends Component {
     songs[song.id] = song;
 
     this.setState({songs});
+  }
+
+  componentWillMount() {
+    this.songsRef = base.syncState('songs', {
+      context: this,
+      state: 'songs'
+    });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.songsRef);
   }
 
   render() {
