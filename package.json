@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "chordsheetjs": "^1.0.4",
+    "re-base": "^3.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1"
