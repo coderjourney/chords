@@ -152,6 +152,7 @@ class App extends Component {
                   authenticated={this.state.authenticated}
                   requireAuth={true}
                   param="songId"
+                  updateSong={this.updateSong}
                   items={this.state.songs} />
               </div>
             </div>
