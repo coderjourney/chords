@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Breadcrumb } from '@blueprintjs/core';
+import { Link } from 'react-router-dom';
 import ChordSheetJS from 'chordsheetjs';
 
 class ChordEditor extends Component {
@@ -29,8 +29,8 @@ class ChordEditor extends Component {
     return (
       <div>
         <ul className="pt-breadcrumbs">
-          <li><Breadcrumb href="/songs" text="Songs" /></li>
-          <li><Breadcrumb href="#" text={song.title} /></li>
+          <li><Link to="/songs" className="pt-breadcrumb">Songs</Link></li>
+          <li><Link to="#" className="pt-breadcrumb">{song.title}</Link></li>
         </ul>
         <h2 style={{margin: "0.5em 0"}}>{song.title}</h2>
         <div className="chord-editor">
